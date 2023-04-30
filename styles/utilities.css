@@ -1,0 +1,71 @@
+/* TEXT */
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.75rem;
+}
+
+.text-md {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.5rem;
+}
+.text-xl {
+    font-size: 2rem;
+}
+.text-xxl {
+    font-size: 2.5rem;
+}
+
+/* SPACING */
+.m-1 {
+    margin: 1rem;
+}
+
+.m-2 {
+    margin: 1.5rem;
+}
+
+.my-1 {
+    margin: 1rem 0;
+}
+
+.my-2 {
+    margin: 1.5rem 0 ;
+}
+
+.mx-1 {
+    margin: 0 1rem;
+}
+
+.mx-2 {
+    margin: 0 1.5rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 1.5rem;
+}
+
+.py-1 {
+    padding: 1rem 0;
+}
+
+.py-2 {
+    padding: 1.5rem 0 ;
+}
+
+.px-1 {
+    padding: 0 1rem;
+}
+
+.px-2 {
+    padding: 0 1.5rem;
+}
