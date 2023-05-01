@@ -123,7 +123,7 @@ window.onscroll = () => {
         // }, 500)
     };
    
-};
+
 
 // Zamiana kierunku scrool hinta
 
