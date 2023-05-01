@@ -11,6 +11,7 @@
     <meta name="keywords" content="the gym, gym, siłownia, klub, fitness, kulturystyka, ćwiczenia, mięśnie, siłownia skołyszyn, siłownie w skołyszynie, fitness skołyszyn, fitness w skołyszynie">
 
     <link rel="icon" href="assets/fav_logo_thegym.png" type="image/png">
+    <link rel="stylesheet" href="styles/scroll_down.css">
     <link rel="stylesheet" href="styles/hamburger.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/utilities.css">
@@ -75,6 +76,7 @@
         <section class="hero" id="strona-glowna-id">
             <h1 class="gym-name">THE GYM</h1>
             <p class="gym-invite">Najlepsza siłownia w twojej okolicy!</p>
+            <div class="mouse"></div>
         </section>
 
     </header>
@@ -402,10 +404,10 @@
                         <div>
                         <h3>Trening Personalny</h3>
                         <ul>
-                            <li>Opieka i wsparcie wyspecjalizowanego Trenera Personalnego</li>
-                            <li>Trening indywidualnie dopasowany do Twoich potrzeb</li>
-                            <li>Pomoc w bezpiecznym i efektywnym osiąganiu celów treningowych</li>
-                            <li>Wskazówki dotyczące ćwiczeń oraz diety</li>
+                            <li>Opieka i wsparcie wyspecjalizowanego Trenera Personalnego.</li>
+                            <li>Trening indywidualnie dopasowany do Twoich potrzeb.</li>
+                            <li>Pomoc w bezpiecznym i efektywnym osiąganiu celów treningowych.</li>
+                            <li>Wskazówki dotyczące ćwiczeń oraz diety.</li>
                         </ul>
                         </div>
                         <div class="personal-prize">
@@ -418,12 +420,12 @@
                         <div>
                             <h3>Masaż / Zabieg leczniczy</h3>
                             <ul>
-                                <li>Masaż sportowy / klasyczny / limfatyczny / relaksujący</li>
-                                <li>Kinesiotaping</li>
-                                <li>Terapia bańkami</li>
-                                <li>Energoterapia</li>
+                                <li>Masaż sportowy / klasyczny / limfatyczny / relaksujący.</li>
+                                <li>Kinesiotaping.</li>
+                                <li>Terapia bańkami.</li>
+                                <li>Energoterapia.</li>
                             </ul>
-                            <p id="massage-text">Pomagamy leczyć: Bóle mięśni, stawów, kręgosłupa, kontuzje, obrzęki, wady postawy, blokady energetyczne</p>
+                            <p id="massage-text">Pomagamy leczyć: Bóle mięśni, stawów, kręgosłupa, kontuzje, obrzęki, wady postawy, blokady energetyczne.</p>
                         </div>
                         <div class="personal-prize">
                             <a href="tel:+48502982157" class="btn">Umów się na spotkanie</a>
@@ -435,8 +437,8 @@
                         <div>
                             <h3>Plan Treningowy</h3>
                             <ul>
-                                <li>Ułożony indywidualnie pod Twoje potrzeby i cele</li>
-                                <li>Po szczegółowej analizie możliwości wydolnościowych ciała Trener ułoży szczegółowy plan treningu, który w efektywny sposób doprowadzi Cię do określonego celu</li>
+                                <li>Ułożony indywidualnie pod Twoje potrzeby i cele.</li>
+                                <li>Po szczegółowej analizie możliwości wydolnościowych ciała Trener ułoży szczegółowy plan treningu, który w efektywny sposób doprowadzi Cię do określonego celu.</li>
                             </ul>
                         </div>
                         <div class="personal-prize">
@@ -449,7 +451,7 @@
                         <div>
                             <h3>Plan Dietetyczny</h3>
                             <ul>
-                                <li>Ułożony indywidualnie pod Twoje potrzeby i cele</li>
+                                <li>Ułożony indywidualnie pod Twoje potrzeby i cele.</li>
                                 <li>Biorąc pod uwagę możliwości, prowadzony tryb życia oraz stan zdrowia, nasi dietetycy stworzą dopasowany plan dietetyczny, który ułatwi uzyskanie wymarzonej formy oraz poprawi stan Twojego zdrowia.</li>
                             </ul>
                         </div>
@@ -505,19 +507,21 @@
 
         <section class="galeria" id="galeria-id">
             <h2 class="section-name" id="h--galeria">GALERIA</h2>
-            <div class="galeria-container">
-                <img src="assets/gallery/gallery_1.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_2.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_3.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_4.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_5.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_6.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_7.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_8.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_9.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_10.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_11.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
-                <img src="assets/gallery/gallery_12.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+            <div class="gallery-wrapper">
+                <div class="galeria-container">
+                    <img src="assets/gallery/gallery_1.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_2.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_3.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_4.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_5.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_6.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_7.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_8.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_9.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_10.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_11.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                    <img src="assets/gallery/gallery_12.jpg" alt="Zdjęcie siłowni TheGym" class="gallery-item" tabindex="0">
+                </div>
             </div>
 
             <div class="gallery-preview-bg hidden">
@@ -538,7 +542,18 @@
         </section>
 
         <section class="kontakt" id="kontakt-id">
+            <div class="kontakt-wrapper">
+                <div class="kontakt-content">
 
+                    <div class="kontakt-left">
+
+                    </div>
+
+                    <div class="kontakt-right">
+                        <iframe src="https://www.google.com/maps/place/The+Gym+-+Siłownia+%26+Klub+Fitness/@49.7483103,21.3354435,18z/data=!4m10!1m2!2m1!1sskołysyzn+silownia!3m6!1s0x473db76ba2f542ef:0x2218a47cc5bfb4f1!8m2!3d49.7495525!4d21.338461!15sChNza2_FgnlzenluIHNpbG93bmlhWhUiE3Nrb8WCeXN6eW4gc2lsb3duaWGSAQNneW3gAQA!16s%2Fg%2F11g86mrvq_?hl=pl-PL" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
         </section>
         
     </main>

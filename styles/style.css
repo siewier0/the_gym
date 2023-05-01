@@ -55,7 +55,6 @@ header {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
 }
 
-
 /* .nav-movile - position: relative ~ MEDIA QUERIES */
 #hamburger {
     z-index: 1;
@@ -208,17 +207,14 @@ nav ul a:hover {
 
 .hero {
     width: 100%;
-    /* height: calc(100% - 80px); */
     height: 90%;
-    /* position: absolute;
-    top: 80px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 90px;
-    /* background-color: red; */
     color: var(--white);
+    position: relative;
 }
 
 .gym-name {
@@ -239,6 +235,11 @@ nav ul a:hover {
 .gym-name,
 .gym-invite {
     text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
+}
+
+.mouse {
+    position: absolute;
+    bottom: 0;
 }
 
 /* HERO - MEDIA QUERIES */
@@ -819,9 +820,13 @@ main {
     align-items: center;
 }
 
+.gallery-wrapper {
+    width: 100%;
+    max-width: 1920px;
+}
+
 .galeria-container {
     width: 80%;
-    max-width: 1920px;
     height: auto;
     margin: 0 auto;
     display: grid;
@@ -1003,6 +1008,55 @@ main {
         right: 50px;
     }
 }
+
+/* KONTAKT */
+.kontakt {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-image: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+                        url(../assets/kontakt.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.kontakt-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.kontakt-content {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.kontakt-right,
+.kontakt-right iframe {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+}
+
+
+
+.cennik .section-name {
+    color: var(--black)
+}
+
+.cennik-wrapper {
+    width: 100%;
+    padding: 0 30px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 
 /* FOOTER */
 footer {

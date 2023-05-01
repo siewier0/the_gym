@@ -56,9 +56,22 @@ document.onclick = function(e) {
 
 
 // Dynamiczne dodawanie klasy active na nav item
+// +
+// Znikanie scrool_hint
 const SECTIONS = document.querySelectorAll("section");
 const NAV_LINKS_D = document.querySelectorAll("header nav ul a");
 const NAV_LINKS_M = document.querySelectorAll("#menu-mobile ul a");
+
+const SCROOL_HINT = document.querySelector(".mouse");
+const HERO_SECTION_HEIGHT = document.querySelector("#strona-glowna-id").offsetHeight
+
+window.onscroll = () => {
+    if (window.scrollY > (HERO_SECTION_HEIGHT / 4)) {
+        SCROOL_HINT.classList.add("mouse-hide")
+    } else {
+        SCROOL_HINT.classList.remove("mouse-hide")
+    }
+}
 
 window.onscroll = () => {
     SECTIONS.forEach((section, index) => {
@@ -79,7 +92,42 @@ window.onscroll = () => {
             document.querySelector('#menu-mobile ul a[value = "' + sectionNumber + '"]').classList.add("nav-active");
         };
     });
+
+    // Znikanie scrool_hint
+    if (window.scrollY > 90) {
+        SCROOL_HINT.classList.add("mouse-fade-out");
+        
+        setTimeout(() => {
+            SCROOL_HINT.classList.add("mouse-hide")
+        }, 490);
+        
+        setTimeout(() => {
+            SCROOL_HINT.classList.remove("mouse-fade-out")
+        }, 500);
+
+    } else {
+        SCROOL_HINT.classList.remove("mouse-hide")
+        
+        // SCROOL_HINT.setAttribute("style", "opacity: 0");
+        // 
+        // SCROOL_HINT.classList.add("mouse-fade-in");
+        
+        // setTimeout(() => {
+        //     SCROOL_HINT.setAttribute("style", "opacity: 1");
+        // }, 500);
+
+        
+        // SCROOL_HINT.classList.remove("mouse-hide")
+        // setTimeout(() => {
+        //     SCROOL_HINT.classList.add("mouse-hide")
+        // }, 500)
+    };
+   
 };
+
+
+
+
 
 
 // Obsługa galerii
