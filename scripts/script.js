@@ -1,35 +1,85 @@
-// Obsługa zwijania/rozwijania menu hamburgera
-const MENU_TOGGLER = document.getElementById("menu-toggler")
-const MENU_MOBILE = document.getElementById("menu-mobile")
-const HAMBURGER = document.querySelector("#hamburger")
-
-
+// Obsługa zwijania/rozwijania menu hamburgera + Blokada wieloklika
+const MENU_TOGGLER = document.getElementById("menu-toggler");
+const MENU_MOBILE = document.getElementById("menu-mobile");
+const HAMBURGER = document.querySelector("#hamburger");
 
 function toggle() {
     if (MENU_MOBILE.classList.contains("menu-mobile-active")) {
         MENU_MOBILE.classList.add("slideOut")
+
         setTimeout(function(){
             MENU_MOBILE.classList.remove("menu-mobile-active")
         }, 580);
+
+        setTimeout(function(){
+            MENU_MOBILE.classList.remove("slideOut")
+        }, 580);
+
+        HAMBURGER.setAttribute("disabled", "true");
+        setTimeout(function(){
+            HAMBURGER.removeAttribute("disabled");
+        }, 580)
+ 
     } else {
-    MENU_MOBILE.classList.toggle("menu-mobile-active")
-    }
+    MENU_MOBILE.classList.toggle("menu-mobile-active");
+    HAMBURGER.setAttribute("disabled", "true");
     setTimeout(function(){
-        MENU_MOBILE.classList.remove("slideOut")
-    }, 600);
+        HAMBURGER.removeAttribute("disabled");
+    }, 580)
+    }
 };
 
 HAMBURGER.addEventListener("click", toggle);
 
+
 // Znikanie menu po wybraniu - mobile
-const NAV_ITEM = document.querySelectorAll("#menu-mobile ul li")
+const NAV_ITEM = document.querySelectorAll("#menu-mobile ul li");
 
 NAV_ITEM.forEach((item) => {
     item.addEventListener("click", () => {
         toggle();
         HAMBURGER.classList.toggle("opened");
+        HAMBURGER.setAttribute("aria-expanded", "false");
 })});
 
+
+// Zamykanie menu po kliknięciu na tło - mobile
+const MENU_AREA = document.querySelector(".nav-mobile");
+
+document.onclick = function(e) {
+    if (!MENU_AREA.contains(e.target) && MENU_MOBILE.classList.contains("menu-mobile-active")) {
+        toggle();
+        HAMBURGER.classList.remove("opened");
+        HAMBURGER.setAttribute("aria-expanded", "false");
+    };
+};
+
+
+// Dynamiczne dodawanie klasy active na nav item
+const SECTIONS = document.querySelectorAll("section");
+const NAV_LINKS_D = document.querySelectorAll("header nav ul a");
+const NAV_LINKS_M = document.querySelectorAll("#menu-mobile ul a");
+
+window.onscroll = () => {
+    SECTIONS.forEach((section, index) => {
+        let top = window.scrollY;
+        let offset = section.offsetTop - 100;
+        let height = section.offsetHeight;
+        let sectionNumber = index + 1;
+        
+        if (top >= offset && top < offset + height) {        
+            NAV_LINKS_D.forEach(link => {
+                link.classList.remove("nav-active");
+            });
+            document.querySelector('nav ul a[value = "' + sectionNumber + '"]').classList.add("nav-active");
+
+            NAV_LINKS_M.forEach(link => {
+                link.classList.remove("nav-active");
+            });
+            document.querySelector('#menu-mobile ul a[value = "' + sectionNumber + '"]').classList.add("nav-active");
+        };
+    });
+};
 
 
 // Obsługa galerii
