@@ -93,20 +93,20 @@ window.onscroll = () => {
         };
     });
 
-    // Znikanie scrool_hint
-    if (window.scrollY > 90) {
-        SCROOL_HINT.classList.add("mouse-fade-out");
+    // // Znikanie scrool_hint
+    // if (window.scrollY > 90) {
+    //     SCROOL_HINT.classList.add("mouse-fade-out");
         
-        setTimeout(() => {
-            SCROOL_HINT.classList.add("mouse-hide")
-        }, 490);
+    //     setTimeout(() => {
+    //         SCROOL_HINT.classList.add("mouse-hide")
+    //     }, 490);
         
-        setTimeout(() => {
-            SCROOL_HINT.classList.remove("mouse-fade-out")
-        }, 500);
+    //     setTimeout(() => {
+    //         SCROOL_HINT.classList.remove("mouse-fade-out")
+    //     }, 500);
 
-    } else {
-        SCROOL_HINT.classList.remove("mouse-hide")
+    // } else {
+    //     SCROOL_HINT.classList.remove("mouse-hide")
         
         // SCROOL_HINT.setAttribute("style", "opacity: 0");
         // 
@@ -125,7 +125,13 @@ window.onscroll = () => {
    
 };
 
+// Zamiana kierunku scrool hinta
 
+window.onload( () => {
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i)) {
+        SCROOL_HINT.setAttribute("style", "transform: rotate(180deg)")
+    } 
+})
 
 
 
