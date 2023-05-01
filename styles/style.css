@@ -61,6 +61,7 @@ header {
     z-index: 1;
 }
 
+
 .header-navigation-mobile-content {
     display: flex;
     flex-direction: column;
@@ -991,14 +992,14 @@ main {
     .arrow-left-mobile {
         display: block;
         position: absolute;
-        bottom: 40px;
+        bottom: 60px;
         left: 50px;
     }
 
     #arrow-right {
         order: 2;
         position: absolute;
-        bottom: 40px;
+        bottom: 60px;
         right: 50px;
     }
 }
