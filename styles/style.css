@@ -65,7 +65,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     display: none;
     position: absolute;
     top: 0px;
@@ -112,6 +112,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    margin-top: 50px;
 }
 
 .socials--icons {
