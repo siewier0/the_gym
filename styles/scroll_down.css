@@ -10,8 +10,7 @@
 	border: 3px solid #FFF;
 	border-radius: 60px;
 	position: relative;
-	opacity: .5;
-	/* animation: opacityChange .8s reverse; */
+	opacity: .2;
 }
 
 .mouse::before {
@@ -24,7 +23,7 @@
     transform: translateX(-50%);
     background-color: #FFF;
     border-radius: 50%;
-    opacity: 1;
+    opacity: .2;
     animation: wheel 2s infinite;
     -webkit-animation: wheel 2s infinite;
 }
@@ -55,10 +54,14 @@
 	display: none;
 }
 
+.opacity_0 {
+	opacity: 0;
+}
+
 
 @keyframes opacityChange {
 	from {
-		opacity: 1;
+		opacity: .5;
 	}
 
 	to {
@@ -72,6 +75,6 @@
 	}
 
 	to {
-		opacity: 1;
+		opacity: .5;
 	}	
 }

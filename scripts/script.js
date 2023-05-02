@@ -1,3 +1,17 @@
+// Zmiana scroolhinta w zależności od urządzenia
+const SCROOL_HINT = document.querySelector(".mouse");
+
+function is_touch_enabled() {
+    return ( 'ontouchstart' in window ) ||
+           ( navigator.maxTouchPoints > 0 ) ||
+           ( navigator.msMaxTouchPoints > 0 );
+}
+
+if ( is_touch_enabled() ) {
+    SCROOL_HINT.setAttribute("style", "transform: rotate(180deg)")
+};
+
+
 // Obsługa zwijania/rozwijania menu hamburgera + Blokada wieloklika
 const MENU_TOGGLER = document.getElementById("menu-toggler");
 const MENU_MOBILE = document.getElementById("menu-mobile");
@@ -56,22 +70,9 @@ document.onclick = function(e) {
 
 
 // Dynamiczne dodawanie klasy active na nav item
-// +
-// Znikanie scrool_hint
 const SECTIONS = document.querySelectorAll("section");
 const NAV_LINKS_D = document.querySelectorAll("header nav ul a");
 const NAV_LINKS_M = document.querySelectorAll("#menu-mobile ul a");
-
-const SCROOL_HINT = document.querySelector(".mouse");
-const HERO_SECTION_HEIGHT = document.querySelector("#strona-glowna-id").offsetHeight
-
-window.onscroll = () => {
-    if (window.scrollY > (HERO_SECTION_HEIGHT / 4)) {
-        SCROOL_HINT.classList.add("mouse-hide")
-    } else {
-        SCROOL_HINT.classList.remove("mouse-hide")
-    }
-}
 
 window.onscroll = () => {
     SECTIONS.forEach((section, index) => {
@@ -91,97 +92,55 @@ window.onscroll = () => {
             });
             document.querySelector('#menu-mobile ul a[value = "' + sectionNumber + '"]').classList.add("nav-active");
         };
-    });
-
-    // // Znikanie scrool_hint
-    // if (window.scrollY > 90) {
-    //     SCROOL_HINT.classList.add("mouse-fade-out");
-        
-    //     setTimeout(() => {
-    //         SCROOL_HINT.classList.add("mouse-hide")
-    //     }, 490);
-        
-    //     setTimeout(() => {
-    //         SCROOL_HINT.classList.remove("mouse-fade-out")
-    //     }, 500);
-
-    // } else {
-    //     SCROOL_HINT.classList.remove("mouse-hide")
-        
-        // SCROOL_HINT.setAttribute("style", "opacity: 0");
-        // 
-        // SCROOL_HINT.classList.add("mouse-fade-in");
-        
-        // setTimeout(() => {
-        //     SCROOL_HINT.setAttribute("style", "opacity: 1");
-        // }, 500);
-
-        
-        // SCROOL_HINT.classList.remove("mouse-hide")
-        // setTimeout(() => {
-        //     SCROOL_HINT.classList.add("mouse-hide")
-        // }, 500)
-    };
-   
-
-
-// Zamiana kierunku scrool hinta
-
-window.onload( () => {
-    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i)) {
-        SCROOL_HINT.setAttribute("style", "transform: rotate(180deg)")
-    } 
-})
-
-
+    })};
 
 
 // Obsługa galerii
 const THUMBNAILS = document.querySelectorAll(".gallery-item");
 const GALLERY_PREVIEW = document.querySelector(".gallery-preview-bg");
-const X_CLOSE = document.querySelector("#x-close")
-const IMG_OPENED = document.querySelector("#img-opened")
-const ARROW_LEFT_D = document.querySelector("#arrow-left-d")
-const ARROW_LEFT_M = document.querySelector("#arrow-left-m")
-const ARROW_RIGHT = document.querySelector("#arrow-right")
-const CURRENT_IMG_AREA = document.querySelector(".current-img")
-const WHICH_IMAGE = document.querySelector("#which-image")
+const X_CLOSE = document.querySelector("#x-close");
+const IMG_OPENED = document.querySelector("#img-opened");
+const ARROW_LEFT_D = document.querySelector("#arrow-left-d");
+const ARROW_LEFT_M = document.querySelector("#arrow-left-m");
+const ARROW_RIGHT = document.querySelector("#arrow-right");
+const CURRENT_IMG_AREA = document.querySelector(".current-img");
+const WHICH_IMAGE = document.querySelector("#which-image");
 
 let currentImageIndex;
 
 const nextImg = () => {
-    if (currentImageIndex === THUMBNAILS.length -1) {
+    if (currentImageIndex === THUMBNAILS.length - 1) {
         currentImageIndex = 0    
     } else {
     currentImageIndex++;
     }
     IMG_OPENED.src = THUMBNAILS[currentImageIndex].src;
-    imageNumber()
+    imageNumber();
 };
 
 const previousImg = () => {
     if (currentImageIndex === 0) {
-        currentImageIndex = THUMBNAILS.length - 1
+        currentImageIndex = THUMBNAILS.length - 1;
     } else {
         currentImageIndex--;
     }
     IMG_OPENED.src = THUMBNAILS[currentImageIndex].src;
-    imageNumber()
+    imageNumber();
 };
 
 const hideGallery = () => {
     GALLERY_PREVIEW.classList.add("fade-out")
     setTimeout( () => {
         GALLERY_PREVIEW.classList.add("hidden");
-    }, 199)
+    }, 199);
 
     setTimeout( () => {
         GALLERY_PREVIEW.classList.remove("fade-out");
-    }, 200)
+    }, 200);
 
     THUMBNAILS.forEach( (element) => {
         element.setAttribute("tabindex", 1)
-    })
+    });
 };
 
 const imageNumber = () => {
