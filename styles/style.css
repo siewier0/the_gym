@@ -235,6 +235,11 @@ nav ul a:hover {
     text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
 }
 
+.hero a {
+    display: flex;
+    justify-content: center;
+}
+
 .mouse {
     position: absolute;
     bottom: 30px;
