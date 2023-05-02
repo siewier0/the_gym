@@ -10,7 +10,7 @@
 	border: 3px solid #FFF;
 	border-radius: 60px;
 	position: relative;
-	opacity: .2;
+	opacity: .4;
 }
 
 .mouse::before {
@@ -23,14 +23,14 @@
     transform: translateX(-50%);
     background-color: #FFF;
     border-radius: 50%;
-    opacity: .2;
+    opacity: 1;
     animation: wheel 2s infinite;
     -webkit-animation: wheel 2s infinite;
 }
 
 @keyframes wheel {
 	to {
-		opacity: 0;
+		opacity: .1;
 		top: 40px;
 	}
 }
